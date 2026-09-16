@@ -3,55 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waverly Chao</title>
-
+  <meta name="description" content="Waverly A. Chao — Cornell Mechanical Engineering student portfolio.">
+  <title>Waverly A. Chao | Mechanical Engineering</title>
   <style>
+    :root {
+      --red: #b31b1b;
+      --red-dark: #8f1515;
+      --ink: #1d232b;
+      --muted: #616a75;
+      --line: #e3e6e8;
+      --soft: #f5f6f7;
+      --white: #ffffff;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: #f2f2f2;
-      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
     }
 
-    .card {
-      width: min(85%, 400px);
-      padding: 40px;
-      text-align: center;
-      background: white;
-      border-top: 8px solid #b31b1b;
-      border-radius: 20px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid rgba(179, 27, 27, .3); outline-offset: 3px; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
     }
 
-    h1 {
-      margin-bottom: 8px;
-    }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 750; text-decoration: none; letter-spacing: -.02em; }
+    .brand span { color: var(--red); }
+    .nav-links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { color: #39414a; font-size: .94rem; font-weight: 600; text-decoration: none; }
+    .nav-links a:hover { color: var(--red); }
 
-    p {
-      color: #555;
-    }
+    .hero { padding: 112px 0 96px; border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 14px; color: var(--red); font-size: .83rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 850px; margin: 0; font-size: clamp(2.8rem, 7vw, 5.7rem); line-height: .98; letter-spacing: -.055em; }
+    .lead { max-width: 680px; margin: 28px 0 0; color: var(--muted); font-size: clamp(1.08rem, 2vw, 1.3rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border: 1px solid var(--red); border-radius: 6px; background: var(--red); color: var(--white); font-weight: 700; text-decoration: none; transition: .2s ease; }
+    .button:hover { background: var(--red-dark); border-color: var(--red-dark); transform: translateY(-1px); }
+    .button.secondary { background: transparent; color: var(--red); }
+    .button.secondary:hover { background: #fff4f4; }
 
-    a {
-      display: block;
-      margin: 12px 0;
-      padding: 12px;
-      color: white;
-      background: #b31b1b;
-      border-radius: 10px;
-      text-decoration: none;
+    section { padding: 88px 0; scroll-margin-top: 70px; }
+    section:nth-of-type(even) { background: var(--soft); }
+    .section-heading { display: grid; grid-template-columns: minmax(150px, .65fr) 1.5fr; gap: 48px; margin-bottom: 42px; }
+    .section-heading h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.55rem); letter-spacing: -.035em; }
+    .section-heading p { max-width: 660px; margin: 2px 0 0; color: var(--muted); }
+
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+    .fact { padding: 24px; }
+    .fact + .fact { border-left: 1px solid var(--line); }
+    .fact strong, .fact span { display: block; }
+    .fact span { margin-top: 4px; color: var(--muted); font-size: .92rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { min-height: 255px; padding: 25px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+    .card-number { color: var(--red); font-size: .8rem; font-weight: 800; letter-spacing: .1em; }
+    .card h3 { margin: 46px 0 8px; font-size: 1.25rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
+    .tag { padding: 4px 8px; border-radius: 4px; background: var(--soft); color: #555e68; font-size: .75rem; font-weight: 650; }
+
+    .skill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .skill-group { padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+    .skill-group h3 { margin: 0 0 8px; }
+    .skill-group p { margin: 0; color: var(--muted); }
+
+    .resume-box { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 32px; border: 1px solid var(--line); border-left: 4px solid var(--red); border-radius: 8px; background: var(--white); }
+    .resume-box h3 { margin: 0 0 5px; }
+    .resume-box p { margin: 0; color: var(--muted); }
+    .button.disabled { border-color: #cfd3d7; background: #e6e8ea; color: #737b84; pointer-events: none; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .contact-link { display: block; padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); text-decoration: none; }
+    .contact-link:hover { border-color: var(--red); }
+    .contact-link small { display: block; color: var(--muted); }
+    .contact-link strong { color: var(--red); overflow-wrap: anywhere; }
+
+    footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+
+    @media (max-width: 760px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 18px 0; gap: 12px; }
+      .nav-links { width: 100%; gap: 16px; overflow-x: auto; padding-bottom: 2px; }
+      .nav-links a { white-space: nowrap; }
+      .hero { padding: 82px 0 70px; }
+      section { padding: 68px 0; scroll-margin-top: 125px; }
+      .section-heading { grid-template-columns: 1fr; gap: 12px; }
+      .facts, .cards, .skill-grid, .contact-grid { grid-template-columns: 1fr; }
+      .fact + .fact { border-left: 0; border-top: 1px solid var(--line); }
+      .resume-box { align-items: flex-start; flex-direction: column; }
     }
   </style>
 </head>
-
 <body>
-  <main class="card">
-    <h1>Waverly Chao</h1>
-    <p>Mechanical Engineering Student, Class of 2029</p>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="#home">Waverly A. <span>Chao</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#resume">Résumé</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <a href="mailto: waverlyachao@gmail.com">Email Me</a>
-    <a href="www.linkedin.com/in/waverlyachao">LinkedIn</a>
+  <main>
+    <div class="hero" id="home">
+      <div class="wrap">
+        <p class="eyebrow">Mechanical Engineering · Cornell University</p>
+        <h1>Waverly A. Chao</h1>
+        <p class="lead">Mechanical engineering student interested in hands-on design, robotics, and building reliable systems from concept through testing.</p>
+        <div class="actions">
+          <a class="button" href="#projects">View projects</a>
+          <a class="button secondary" href="mailto:wac75@cornell.edu">Contact me</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>About</h2>
+          <p>I am a Cornell University mechanical engineering student developing experience across engineering design, analysis, fabrication, and technical problem-solving.</p>
+        </div>
+        <div class="facts">
+          <div class="fact"><strong>Cornell University</strong><span>Ithaca, New York</span></div>
+          <div class="fact"><strong>Mechanical Engineering</strong><span>Bachelor of Science candidate</span></div>
+          <div class="fact"><strong>Class of 2029</strong><span>Expected graduation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Selected projects</h2>
+          <p>This section is ready for concise case studies showing the problem, your contribution, the engineering process, and the final result.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="card-number">PROJECT 01</span>
+            <h3>Project title</h3>
+            <p>Add a two- or three-sentence summary describing the problem, your specific role, and a measurable outcome.</p>
+            <div class="tags"><span class="tag">Design</span><span class="tag">Analysis</span><span class="tag">Testing</span></div>
+          </article>
+          <article class="card">
+            <span class="card-number">PROJECT 02</span>
+            <h3>Project title</h3>
+            <p>Add the major design decisions, tools used, and what you learned or improved through iteration.</p>
+            <div class="tags"><span class="tag">CAD</span><span class="tag">Fabrication</span><span class="tag">Teamwork</span></div>
+          </article>
+          <article class="card">
+            <span class="card-number">PROJECT 03</span>
+            <h3>Project title</h3>
+            <p>Add a technical project with strong visuals, clear ownership, and evidence that the design worked.</p>
+            <div class="tags"><span class="tag">Prototyping</span><span class="tag">Programming</span><span class="tag">Validation</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Technical skills</h2>
+          <p>Replace these placeholders with tools you can discuss confidently in an interview or demonstrate through your projects.</p>
+        </div>
+        <div class="skill-grid">
+          <div class="skill-group"><h3>Design &amp; CAD</h3><p>CAD software · Technical drawings · Design for manufacturing · Assemblies</p></div>
+          <div class="skill-group"><h3>Analysis</h3><p>Engineering calculations · Data analysis · Testing · Documentation</p></div>
+          <div class="skill-group"><h3>Manufacturing</h3><p>Prototyping · Additive manufacturing · Shop tools · Assembly</p></div>
+          <div class="skill-group"><h3>Programming</h3><p>Programming languages · Engineering software · Version control · Automation</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Résumé</h2>
+          <p>A downloadable résumé will be added here. The section can later link directly to a PDF stored in this repository.</p>
+        </div>
+        <div class="resume-box">
+          <div><h3>Waverly A. Chao — Résumé</h3><p>Résumé file coming soon.</p></div>
+          <span class="button disabled" aria-disabled="true">Coming soon</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>For opportunities, engineering projects, or professional inquiries, reach me through any of the channels below.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-link" href="mailto:wac75@cornell.edu"><small>Cornell email</small><strong>wac75@cornell.edu</strong></a>
+          <a class="contact-link" href="mailto:waverlyachao@gmail.com"><small>Personal email</small><strong>waverlyachao@gmail.com</strong></a>
+          <a class="contact-link" href="https://www.linkedin.com/in/waverlyachao" target="_blank" rel="noopener noreferrer"><small>LinkedIn</small><strong>linkedin.com/in/waverlyachao</strong></a>
+          <a class="contact-link" href="https://github.com/WaverlyAChao" target="_blank" rel="noopener noreferrer"><small>GitHub</small><strong>github.com/WaverlyAChao</strong></a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Waverly A. Chao</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
