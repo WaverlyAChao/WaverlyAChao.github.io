@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photography, climbing, travel, and interests beyond engineering — Waverly A. Chao.">
+  <title>Beyond Engineering | Waverly A. Chao</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Page navigation">
+      <a class="brand" href="index.html">Waverly A. <span>Chao</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#beyond">Back</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="subpage-hero">
+      <div class="wrap">
+        <a class="back-link" href="index.html#beyond">← Back to portfolio</a>
+        <p class="eyebrow">Beyond engineering</p>
+        <h1>The places, challenges, and details that keep me curious.</h1>
+        <p class="lead">Outside school and technical projects, I spend my time climbing, exploring the outdoors, taking photographs, and experimenting with FPV drones.</p>
+      </div>
+    </div>
+
+    <section id="interests">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>What I enjoy</h2>
+          <p>Different interests, but the same habit of paying attention, testing limits, and learning by doing.</p>
+        </div>
+        <div class="subpage-grid">
+          <article class="life-card"><h3>Rock climbing</h3><p>I enjoy the combination of movement, problem-solving, commitment, and iteration—especially powerful cave climbing and dynamic moves.</p></article>
+          <article class="life-card"><h3>Hiking &amp; national parks</h3><p>I am working toward a long-term goal of visiting every U.S. national park and documenting the landscapes along the way.</p></article>
+          <article class="life-card"><h3>Photography</h3><p>Photography gives me a reason to slow down, notice composition and detail, and preserve the character of a place.</p></article>
+          <article class="life-card"><h3>FPV drones</h3><p>I enjoy learning to fly, exploring aerial perspectives, and combining photography with hands-on building and design.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="photography">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Photography</h2>
+          <p>A flexible gallery for landscapes, travel, climbing, details, and aerial work. Replace each space with one of your photographs.</p>
+        </div>
+        <div class="photo-grid">
+          <!-- Replace a slot with: <img class="photo-slot" src="images/photo-name.jpg" alt="Describe the photograph"> -->
+          <div class="photo-slot feature">Featured photograph</div>
+          <div class="photo-slot">Landscape or travel</div>
+          <div class="photo-slot">Climbing or outdoors</div>
+          <div class="photo-slot">Details, people, or aerial work</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ecuador">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Ecuador</h2>
+          <p>A National Geographic travel experience that will become a full visual project with trip details, field notes, and photographs.</p>
+        </div>
+        <a class="ecuador-feature" href="projects/ecuador-national-geographic.html">
+          <div>
+            <span class="eyebrow">Project preview</span>
+            <h3>Ecuador with National Geographic</h3>
+            <p>The project page is ready for the story and photographs whenever you are.</p>
+          </div>
+          <strong>Open preview →</strong>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">© <span id="year"></span> Waverly A. Chao</div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
