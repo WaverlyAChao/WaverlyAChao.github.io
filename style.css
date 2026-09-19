@@ -145,3 +145,40 @@ footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted)
   }
   .project-intro .more-projects { width: 100%; }
 }
+
+.personal-feature { display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; align-items: center; padding: 34px; border: 1px solid var(--line); border-radius: 12px; background: var(--white); }
+.personal-copy h3 { max-width: 520px; margin: 0 0 14px; font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 1.12; letter-spacing: -.035em; }
+.personal-copy > p:not(.eyebrow) { margin: 0; color: var(--muted); }
+.interest-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.interest-tags span { padding: 6px 10px; border-radius: 999px; background: var(--soft); color: #525b65; font-size: .8rem; font-weight: 700; }
+.personal-actions { margin-top: 27px; }
+.personal-collage { display: grid; grid-template-columns: 1.08fr .92fr; grid-template-rows: repeat(2, 150px); gap: 12px; }
+.personal-photo { display: grid; place-items: end start; padding: 18px; border: 1px dashed #bfc5ca; border-radius: 9px; background: linear-gradient(145deg, #f7f7f7, #eceff1); color: var(--muted); font-size: .83rem; font-weight: 700; }
+.personal-photo.tall { grid-row: 1 / 3; background: linear-gradient(155deg, #f7eeee, #f3f4f5 62%); }
+.ecuador-feature { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 20px; padding: 28px 30px; border: 1px solid var(--line); border-left: 4px solid var(--red); border-radius: 9px; background: var(--white); text-decoration: none; transition: .2s ease; }
+.ecuador-feature:hover { transform: translateY(-2px); border-color: var(--red); box-shadow: 0 12px 28px rgba(29,35,43,.07); }
+.ecuador-feature h3 { margin: 3px 0 5px; font-size: 1.3rem; }
+.ecuador-feature p { max-width: 690px; margin: 0; color: var(--muted); }
+.ecuador-feature > strong { flex-shrink: 0; color: var(--red); }
+
+.subpage-hero { padding: 88px 0 68px; border-bottom: 1px solid var(--line); }
+.back-link { display: inline-block; margin-bottom: 28px; color: var(--red); font-weight: 750; text-decoration: none; }
+.subpage-hero h1 { max-width: 900px; }
+.subpage-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.life-card { padding: 26px; border: 1px solid var(--line); border-radius: 9px; background: var(--white); }
+.life-card h3 { margin: 0 0 8px; }
+.life-card p { margin: 0; color: var(--muted); }
+.photo-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 14px; }
+.photo-slot { min-height: 250px; display: grid; place-items: end start; padding: 20px; border: 1px dashed #bfc5ca; border-radius: 9px; background: linear-gradient(145deg, #f8f8f8, #eceff1); color: var(--muted); font-size: .85rem; font-weight: 700; }
+.photo-slot.feature { min-height: 400px; grid-row: span 2; }
+.photo-grid .photo-slot:nth-child(4) { grid-column: 2 / 4; }
+.page-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+@media (max-width: 760px) {
+  .personal-feature, .subpage-grid, .photo-grid { grid-template-columns: 1fr; }
+  .personal-feature { padding: 24px; }
+  .personal-collage { grid-template-rows: repeat(2, 120px); }
+  .ecuador-feature { align-items: flex-start; flex-direction: column; }
+  .photo-slot.feature { min-height: 280px; grid-row: auto; }
+  .photo-grid .photo-slot:nth-child(4) { grid-column: auto; }
+}
