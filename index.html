@@ -5,124 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Waverly A. Chao — Cornell Mechanical Engineering student portfolio.">
   <title>Waverly A. Chao | Mechanical Engineering</title>
-  <style>
-    :root {
-      --red: #b31b1b;
-      --red-dark: #8f1515;
-      --ink: #1d232b;
-      --muted: #616a75;
-      --line: #e3e6e8;
-      --soft: #f5f6f7;
-      --white: #ffffff;
-      --max: 1080px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--white);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
-
-    a { color: inherit; }
-    a:focus-visible, button:focus-visible { outline: 3px solid rgba(179, 27, 27, .3); outline-offset: 3px; }
-    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 255, 255, .96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
-    }
-
-    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { font-weight: 750; text-decoration: none; letter-spacing: -.02em; }
-    .brand span { color: var(--red); }
-    .nav-links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
-    .nav-links a { color: #39414a; font-size: .94rem; font-weight: 600; text-decoration: none; }
-    .nav-links a:hover { color: var(--red); }
-
-    .hero { padding: 112px 0 96px; border-bottom: 1px solid var(--line); }
-    .eyebrow { margin: 0 0 14px; color: var(--red); font-size: .83rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
-    h1 { max-width: 850px; margin: 0; font-size: clamp(2.8rem, 7vw, 5.7rem); line-height: .98; letter-spacing: -.055em; }
-    .lead { max-width: 680px; margin: 28px 0 0; color: var(--muted); font-size: clamp(1.08rem, 2vw, 1.3rem); }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border: 1px solid var(--red); border-radius: 6px; background: var(--red); color: var(--white); font-weight: 700; text-decoration: none; transition: .2s ease; }
-    .button:hover { background: var(--red-dark); border-color: var(--red-dark); transform: translateY(-1px); }
-    .button.secondary { background: transparent; color: var(--red); }
-    .button.secondary:hover { background: #fff4f4; }
-
-    section { padding: 88px 0; scroll-margin-top: 70px; }
-    section:nth-of-type(even) { background: var(--soft); }
-    .section-heading { display: grid; grid-template-columns: minmax(150px, .65fr) 1.5fr; gap: 48px; margin-bottom: 42px; }
-    .section-heading h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.55rem); letter-spacing: -.035em; }
-    .section-heading p { max-width: 660px; margin: 2px 0 0; color: var(--muted); }
-
-    .facts { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
-    .fact { padding: 24px; }
-    .fact + .fact { border-left: 1px solid var(--line); }
-    .fact strong, .fact span { display: block; }
-    .fact span { margin-top: 4px; color: var(--muted); font-size: .92rem; }
-
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card-link { display: block; color: inherit; text-decoration: none; border-radius: 8px; }
-    .card { height: 100%; min-height: 255px; padding: 25px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
-    .card-link:hover .card, .card-link:focus-visible .card { transform: translateY(-3px); border-color: var(--red); box-shadow: 0 12px 28px rgba(29, 35, 43, .08); }
-    .card-number { color: var(--red); font-size: .8rem; font-weight: 800; letter-spacing: .1em; }
-    .card h3 { margin: 46px 0 8px; font-size: 1.25rem; }
-    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
-    .tag { padding: 4px 8px; border-radius: 4px; background: var(--soft); color: #555e68; font-size: .75rem; font-weight: 650; }
-    .card-cta { display: inline-block; margin-top: 22px; color: var(--red); font-size: .88rem; font-weight: 750; }
-    .more-projects { width: min(100%, 510px); margin: 24px 0 0 auto; position: relative; }
-    .more-projects summary { width: fit-content; margin-left: auto; padding: 11px 16px; border: 1px solid var(--red); border-radius: 6px; color: var(--red); font-weight: 750; cursor: pointer; list-style: none; }
-    .more-projects summary::-webkit-details-marker { display: none; }
-    .more-projects summary::after { content: " +"; }
-    .more-projects[open] summary::after { content: " −"; }
-    .more-projects-menu { margin-top: 10px; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--white); box-shadow: 0 16px 35px rgba(29, 35, 43, .1); }
-    .more-projects-menu a { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 17px 19px; text-decoration: none; }
-    .more-projects-menu a + a { border-top: 1px solid var(--line); }
-    .more-projects-menu a:hover { background: #fff7f7; }
-    .more-projects-menu span { color: var(--red); font-weight: 750; }
-
-    .skill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .skill-group { padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
-    .skill-group h3 { margin: 0 0 8px; }
-    .skill-group p { margin: 0; color: var(--muted); }
-
-    .resume-box { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 32px; border: 1px solid var(--line); border-left: 4px solid var(--red); border-radius: 8px; background: var(--white); }
-    .resume-box h3 { margin: 0 0 5px; }
-    .resume-box p { margin: 0; color: var(--muted); }
-    .document-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .button.disabled { border-color: #cfd3d7; background: #e6e8ea; color: #737b84; pointer-events: none; }
-
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .contact-link { display: block; padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); text-decoration: none; }
-    .contact-link:hover { border-color: var(--red); }
-    .contact-link small { display: block; color: var(--muted); }
-    .contact-link strong { color: var(--red); overflow-wrap: anywhere; }
-
-    footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
-
-    @media (max-width: 760px) {
-      nav { align-items: flex-start; flex-direction: column; padding: 18px 0; gap: 12px; }
-      .nav-links { width: 100%; gap: 16px; overflow-x: auto; padding-bottom: 2px; }
-      .nav-links a { white-space: nowrap; }
-      .hero { padding: 82px 0 70px; }
-      section { padding: 68px 0; scroll-margin-top: 125px; }
-      .section-heading { grid-template-columns: 1fr; gap: 12px; }
-      .facts, .cards, .skill-grid, .document-grid, .contact-grid { grid-template-columns: 1fr; }
-      .fact + .fact { border-left: 0; border-top: 1px solid var(--line); }
-      .resume-box { align-items: flex-start; flex-direction: column; }
-      .more-projects { width: 100%; }
-      .more-projects summary { width: 100%; margin-left: 0; text-align: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -169,7 +52,17 @@
       <div class="wrap">
         <div class="section-heading">
           <h2>Selected projects</h2>
-          <p>A brief introduction to some of my favorite projects.</p>
+          <div class="project-intro">
+            <p>A brief introduction to some of my favorite projects.</p>
+            <details class="more-projects">
+              <summary>More projects</summary>
+              <div class="more-projects-menu">
+                <a href="projects/panoramic-camera-mount.html"><strong>Panoramic Camera Mount</strong><span>Open →</span></a>
+                <a href="projects/robotics-summer-intensive.html"><strong>Robotics Summer Intensive</strong><span>Open →</span></a>
+                <a href="projects/engineering-mentorship.html"><strong>Engineering Mentorship</strong><span>Open →</span></a>
+              </div>
+            </details>
+          </div>
         </div>
         <div class="cards">
           <a class="card-link" href="projects/rover-suspension.html" aria-label="Read more about the Cornell Mars Rover suspension project">
@@ -200,14 +93,6 @@
           </article>
           </a>
         </div>
-        <details class="more-projects">
-          <summary>More projects</summary>
-          <div class="more-projects-menu">
-            <a href="projects/panoramic-camera-mount.html"><strong>Panoramic Camera Mount</strong><span>Open →</span></a>
-            <a href="projects/robotics-summer-intensive.html"><strong>Robotics Summer Intensive</strong><span>Open →</span></a>
-            <a href="projects/engineering-mentorship.html"><strong>Engineering Mentorship</strong><span>Open →</span></a>
-          </div>
-        </details>
       </div>
     </section>
 
@@ -268,3 +153,4 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
