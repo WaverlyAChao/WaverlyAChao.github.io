@@ -22,7 +22,7 @@
     <div class="project-hero">
       <div class="wrap">
         <a class="back" href="../index.html#projects">← Back to projects</a>
-        <p class="eyebrow">Cornell Mars Rover · Drives Team</p>
+        <div class="project-brand"><img class="rover-logo" src="../images/cmr-stars.png" alt="Cornell Mars Rover logo"><p class="eyebrow">Cornell Mars Rover · Drives Team</p></div>
         <h1>2026–2027 Suspension: still working, check back later for a better fleshed out explination!</h1>
         <p class="lead">Building on previous designs, I rebuilt our swerve system from the ground up. The redesign replaces the former motor-and-gearbox system with a single actuator.</p>
         <div class="tags"><span class="tag">Mechanical Design</span><span class="tag">CAD</span><span class="tag">Analysis</span></div>
@@ -55,16 +55,28 @@
     <section>
       <div class="wrap">
         <div class="section-grid">
-          <h2>Photos &amp; visuals</h2>
-          <div class="copy"><p>*strongest image first, then use the smaller spaces for CAD, fabrication, testing, or results.</p></div>
+          <h2>CAD &amp; project photos</h2>
+          <div class="copy"><p>Current CAD views show the suspension assembly and early layout work. The spaces below are reserved for photos of the physical build and rover testing.</p></div>
         </div>
-        <div class="gallery">
-          <!-- Replace a placeholder with: <img src="../images/your-photo.jpg" alt="Describe what the photo shows"> -->
-          <div class="photo-placeholder"><div><strong>Main project photo</strong>Add final assembly or best overall image</div></div>
+        <div class="gallery" aria-label="CAD visuals of the rover suspension">
+          <figure class="visual-card visual-feature">
+            <img src="../images/rover-suspension-assembly.png" alt="Rendered CAD model of the redesigned rover suspension assembly, showing the red control arms and central actuator">
+            <figcaption><strong>Suspension assembly</strong><span>Rendered CAD view of the redesigned suspension and single-actuator swerve mechanism.</span></figcaption>
+          </figure>
           <div class="gallery-side">
-            <div class="photo-placeholder"><div><strong>CAD or process</strong>Add a design screenshot</div></div>
-            <div class="photo-placeholder"><div><strong>Testing or results</strong>Add a build or test photo</div></div>
+            <figure class="visual-card">
+              <img src="../images/rover-suspension-layout.png" alt="Top-view CAD layout sketch with suspension dimensions and constraints">
+              <figcaption><strong>Plan view</strong><span>Early layout and spacing in CAD.</span></figcaption>
+            </figure>
+            <figure class="visual-card">
+              <img src="../images/rover-suspension-cad-sketch.png" alt="Isometric CAD sketch showing the rover suspension geometry and construction planes">
+              <figcaption><strong>Geometry development</strong><span>Isometric CAD sketch used to develop the suspension layout.</span></figcaption>
+            </figure>
           </div>
+        </div>
+        <div class="field-gallery" aria-label="Reserved spaces for non-CAD rover photos">
+          <div class="photo-placeholder"><div><strong>Physical build</strong>Space for a workshop or machining photo</div></div>
+          <div class="photo-placeholder"><div><strong>Rover testing</strong>Space for the installed suspension or a field test photo</div></div>
         </div>
       </div>
     </section>

@@ -104,3 +104,22 @@ footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted)
   .impact-list > div { grid-template-columns: 1fr; gap: 5px; }
   .robot-gallery .photo-wide { grid-column: auto; min-height: 240px; }
 }
+
+.project-brand { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.project-brand .eyebrow { margin: 0; }
+.rover-logo { display: block; width: 98px; height: 70px; object-fit: contain; border-radius: 4px; background: #050505; }
+.visual-card { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+.visual-card img { display: block; width: 100%; object-fit: contain; background: #eef0f2; }
+.visual-feature img { height: min(58vw, 600px); min-height: 380px; }
+.gallery-side .visual-card img { height: 190px; }
+.visual-card figcaption { display: grid; gap: 3px; padding: 13px 16px; font-size: .88rem; line-height: 1.45; }
+.visual-card figcaption span { color: var(--muted); }
+.field-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.field-gallery .photo-placeholder { min-height: 200px; }
+@media (max-width: 720px) {
+  .project-brand { align-items: flex-start; }
+  .rover-logo { width: 80px; height: 58px; }
+  .visual-feature img { height: 340px; min-height: 0; }
+  .gallery-side .visual-card img { height: 220px; }
+  .field-gallery { grid-template-columns: 1fr; }
+}
